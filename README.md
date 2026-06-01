@@ -10,6 +10,13 @@ idea -> story -> screenplay -> shot list -> visual bible -> image prompts -> vid
 
 It is built for agents that can read local skill folders: ChatGPT, Claude, Gemini, Grok, Cursor agents, Codex/local agents, and other agentic systems.
 
+## Quick Install
+
+```bash
+git clone https://github.com/0xhughs/director-skills.git
+cp -R director-skills/skills/* ~/.codex/skills/
+```
+
 ## What This Is
 
 This repository is a modular agent-skills suite for AI filmmaking and cinematic prompting.
