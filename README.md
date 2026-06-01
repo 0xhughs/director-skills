@@ -1,71 +1,208 @@
 # director-skills
 
-`director-skills` is an agent-skills-compatible creative production system for AI-assisted story writing, AI filmmaking, cinematic prompting, and model-specific prompt export.
+**A cinematic operating system for AI story development, visual direction, and image/video prompt production.**
 
-It helps an AI assistant move a project through this pipeline:
+`director-skills` turns an AI assistant into a creative production partner that can help move a project from first spark to final prompt package:
 
-`idea -> story -> screenplay -> shot list -> visual bible -> image prompts -> video prompts -> model-specific exports -> iteration`
+```text
+idea -> story -> screenplay -> shot list -> visual bible -> image prompts -> video prompts -> model exports -> iteration
+```
 
-## What agent-skills-compatible means here
+It is built for agents that can read local skill folders: ChatGPT, Claude, Gemini, Grok, Cursor agents, Codex/local agents, and other agentic systems.
 
-Each skill lives in `skills/<skill-name>/SKILL.md` with YAML frontmatter containing `name` and `description`. The `SKILL.md` file gives routing guidance, workflows, decision logic, outputs, quality checks, anti-patterns, exit criteria, and pointers to local references, templates, checklists, examples, and tests.
+## What This Is
 
-The suite is designed for agents such as ChatGPT, Claude, Gemini, Grok, Cursor agents, Codex/local agents, or other assistants that can read a skill folder and follow procedural instructions.
+This repository is a modular agent-skills suite for AI filmmaking and cinematic prompting.
 
-## Skill map
+It helps an assistant:
 
-| Task | Use this skill |
+- Shape raw ideas into short stories, loglines, treatments, and scene lists.
+- Write or revise Fountain-friendly screenplay scenes.
+- Break scripts into shot lists, camera plans, and asset requirements.
+- Build character, location, prop, costume, and visual-style bibles.
+- Generate cinematic still, keyframe, reference-sheet, text-to-video, and image-to-video prompts.
+- Translate universal creative intent into model-specific exports.
+- Diagnose failed generations and run disciplined iteration loops.
+
+The north star: **do not write one giant prompt. Build a production pipeline.**
+
+## The Three-Layer Method
+
+Every workflow separates the work into three layers.
+
+### 1. Creative Intent
+
+Story, theme, character, emotion, scene purpose, dramatic action, genre, tone, and audience experience.
+
+### 2. Cinematic Execution
+
+Shot type, framing, angle, camera movement, lens, lighting, blocking, production design, texture, realism, continuity, and audio.
+
+### 3. Model Adaptation
+
+Prompt syntax, length, parameters, negative support, references, aspect ratio, duration, resolution, seeds, text/logo limits, motion behavior, and model-specific failure modes.
+
+One prompt format does not work everywhere. The suite treats model adaptation as its own craft layer.
+
+## Skill Map
+
+| Task | Skill |
 |---|---|
 | Raw idea to short-story plan, logline, premise, treatment, scene list | `short-film-development` |
 | Fountain scenes, screenplay writing, dialogue, beats, emotional turns | `screenplay-and-scene-writing` |
-| Script/scene to shot list, camera plan, asset list | `shotlist-and-visual-breakdown` |
+| Script or scene to shot list, camera plan, asset list | `shotlist-and-visual-breakdown` |
 | Character, location, prop, keyframe, poster, still prompts | `cinematic-image-prompting` |
 | Text-to-video, image-to-video, time-blocked prompts | `cinematic-video-prompting` |
-| Character/location/prop/costume/style continuity | `character-location-prop-bible` |
-| Diagnose failed outputs and revise prompts | `prompt-iteration-and-diagnostics` |
+| Character, location, prop, costume, and style continuity | `character-location-prop-bible` |
+| Failed output diagnosis and prompt revision | `prompt-iteration-and-diagnostics` |
 | Genre, tone, camera, lens, lighting, realism, style | `style-cinematography-director` |
-| Translate prompts/settings for specific models/tools | `model-adaptation` |
+| Multi-model prompt translation and export | `model-adaptation` |
 
-## Example user requests
+## Repository Structure
+
+```text
+director-skills/
+  README.md
+  SOURCE_MAP.md
+  CHANGELOG.md
+  MANIFEST.md
+  skills/
+    short-film-development/
+    screenplay-and-scene-writing/
+    shotlist-and-visual-breakdown/
+    cinematic-image-prompting/
+    cinematic-video-prompting/
+    character-location-prop-bible/
+    prompt-iteration-and-diagnostics/
+    style-cinematography-director/
+    model-adaptation/
+```
+
+Each skill contains:
+
+- `SKILL.md` with YAML frontmatter, routing guidance, workflow, quality checks, anti-patterns, and exit criteria.
+- `references/` for distilled craft and model guidance.
+- `templates/` for reusable production artifacts.
+- `checklists/` for review and validation.
+- `examples/` for complete workflow samples.
+- `tests/` for Markdown-based routing and output validation.
+
+## Example Commands For Your Agent
+
+Try prompts like:
 
 - "Turn this premise into a 5-minute short-film treatment."
 - "Turn this raw idea into a short-story plan with a revision audit."
 - "Write this scene in Fountain format."
-- "Write a tense screenplay scene from this beat sheet."
 - "Break this scene into a shot list for AI video generation."
 - "Create a character reference sheet prompt for the protagonist."
+- "Design a visual bible for this short film."
 - "Make this still prompt cinematic and photoreal."
 - "Animate this image as an 8-second I2V prompt."
 - "Convert this prompt for Kling, Seedance, Veo, and Grok."
 - "The output changed the character's face. Diagnose and revise."
 
-## Expected workflow
+## Production Flow
 
-1. Start with `short-film-development` to define story, theme, point of view if prose, character pressure, scene list, and visual anchors.
-2. Use `screenplay-and-scene-writing` to write or revise key scenes, including Fountain output when needed.
-3. Use `character-location-prop-bible` to lock recurring assets and continuity rules.
-4. Use `style-cinematography-director` to define camera, lens, light, palette, texture, and genre rules.
-5. Use `shotlist-and-visual-breakdown` to convert scenes into shots and asset requirements.
-6. Use `cinematic-image-prompting` for reference sheets, keyframes, locations, props, posters, and stills.
-7. Use `cinematic-video-prompting` for T2V/I2V/extension prompts with timing, motion, audio, and constraints.
-8. Use `model-adaptation` whenever a named model or multi-model export is involved.
-9. Use `prompt-iteration-and-diagnostics` after outputs fail or drift.
-10. For release-minded projects, use `prompt-iteration-and-diagnostics` for story, voice, continuity, rights, provenance, subtitle, and post-production QC.
+1. **Develop the story** with `short-film-development`.
+2. **Write the scene** with `screenplay-and-scene-writing`.
+3. **Lock continuity** with `character-location-prop-bible`.
+4. **Define the look** with `style-cinematography-director`.
+5. **Break the scene into shots** with `shotlist-and-visual-breakdown`.
+6. **Generate stills and keyframes** with `cinematic-image-prompting`.
+7. **Generate video prompts** with `cinematic-video-prompting`.
+8. **Export for specific tools** with `model-adaptation`.
+9. **Diagnose failures** with `prompt-iteration-and-diagnostics`.
+10. **Package the project** with final prompts, continuity notes, model exports, and QC checks.
 
-## Model adaptation layer
+## Model Adaptation
 
-`model-adaptation` separates universal creative/cinematic intent from model-specific syntax and controls. It tracks prompt format, negative prompt support, reference image support, duration, aspect ratio, resolution, seeds, text/logo behavior, motion control, audio, and common failure modes.
+The `model-adaptation` skill handles prompt translation for image and video models including:
 
-If a capability is not clearly supported by the reviewed guides, the suite marks it `unknown` instead of guessing.
+- Grok Imagine / Aurora
+- Gemini image / Nano Banana
+- GPT-image
+- Le Chat / FLUX
+- Gemini Veo
+- Gemini Omni
+- Kling
+- Seedance
+- Midjourney
+- Stable Diffusion
+- Ideogram
+- Runway
+- Pika
+- Luma
+- Sora
+- Hailuo
+- DALL-E
 
-## Adding new guides later
+If a capability is not clearly supported by the reviewed source material, the suite marks it as `unknown` instead of guessing.
 
-1. Add the guide outside `director-skills`.
-2. Read it for repeatable workflows, not just facts.
-3. Update `SOURCE_MAP.md` with source influence and cautions.
-4. Update the relevant skill references/templates/tests.
-5. If the guide changes model capabilities, update `skills/model-adaptation/references/*` and add a test.
+## Install Or Use
 
-## Updating model profiles
+For an agent-skills-compatible environment, copy or reference the skill folders under `skills/`.
 
-Use `skills/model-adaptation/references/model_update_protocol.md`. Prefer current official documentation for live specs, mark source confidence, and keep unknowns explicit.
+Example local install:
+
+```bash
+cp -R skills/* ~/.codex/skills/
+```
+
+You can also keep this repository as a reference library and point your agent at the specific skill folder needed for the task.
+
+## Source Grounding
+
+The suite was distilled from local research guides covering:
+
+- AI image models
+- AI video models
+- prompt engineering
+- photorealism
+- cinematography
+- camera and lens language
+- camera movement
+- genre and visual style
+- film writing
+- screenplay support
+- short-film production
+- continuity management
+- AI storytelling workflows
+
+See [SOURCE_MAP.md](SOURCE_MAP.md) for source influence, cautions, exclusions, and known gaps.
+
+## Safety And IP Hygiene
+
+The suite intentionally avoids:
+
+- hidden instructions or prompt-injection content
+- secret handling patterns
+- private-file assumptions
+- unsafe bypass tactics
+- long copied passages from source guides
+- model capability guesses presented as facts
+
+Rights, provenance, likeness, and copyright notes are included as production risk guidance, not legal advice.
+
+## Updating The Suite
+
+When adding new guides:
+
+1. Read for repeatable workflows, not just facts.
+2. Update [SOURCE_MAP.md](SOURCE_MAP.md).
+3. Add or revise references, templates, examples, and tests.
+4. If model behavior changes, update `skills/model-adaptation/references/`.
+5. Mark confidence and unknowns explicitly.
+
+## The Vibe
+
+Think of `director-skills` as a compact virtual production room:
+
+- one table for story
+- one wall for continuity
+- one monitor for shots
+- one shelf for references
+- one export station for models
+- one ruthless diagnostic loop for when the machine gets weird
+
+Bring the spark. The suite helps build the film.
