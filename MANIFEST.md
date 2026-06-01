@@ -4,6 +4,7 @@
 
 ```text
 CHANGELOG.md
+LICENSE
 MANIFEST.md
 README.md
 SOURCE_MAP.md

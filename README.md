@@ -184,6 +184,10 @@ The suite intentionally avoids:
 
 Rights, provenance, likeness, and copyright notes are included as production risk guidance, not legal advice.
 
+## License
+
+MIT. Use it, adapt it, remix it, and ship with it. See [LICENSE](LICENSE).
+
 ## Updating The Suite
 
 When adding new guides:
