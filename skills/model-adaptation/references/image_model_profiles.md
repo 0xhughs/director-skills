@@ -1,0 +1,226 @@
+# Image Model Profiles
+
+## Grok Imagine / Aurora
+- Model name: Grok Imagine / Aurora
+- Modality: image generation, image editing, image reference source for video
+- Best use cases: photoreal portraits, cinematic stills, editorial/product imagery, social variants, fast iteration
+- Weak use cases: dense text, exact logos, automatic cross-session identity without references, close-up hands
+- Prompt structure recommendations: natural prose; front-load subject/action/environment; follow with lighting, camera/lens, style, aspect/output
+- Ideal prompt length: 40-120 words for many practical prompts; longer allowed by API guides
+- Style control behavior: strong with photographic and cinematic vocabulary
+- Realism behavior: strong when physical light, contact shadows, skin/fabric texture, and optical imperfections are named
+- Camera/lens understanding: strong for lens, shot scale, lighting, and composition terms
+- Motion understanding: not applicable for stills; use video profile for motion
+- Character consistency support: requires reference image workflow for reliable series; text-only character descriptions drift
+- Reference image support: supported via documented workflows/API in local guides
+- Negative prompt support: no separate consumer negative field in guides; use positive restatement unless current API says otherwise
+- Parameter support: aspect ratio and output fields documented in Grok API guide; verify current API
+- Aspect ratio support: many aspect ratios documented in guides
+- Duration support: n/a for image
+- Resolution support: resolution options documented in API guide; verify current values
+- Seed/reference controls: seed support unknown in distilled local guides; reference controls documented
+- Common artifacts: hands, text artifacts, identity drift, prompt auto-rewrite surprises
+- Recommended prompt template: [subject + action], [specific environment], [lighting], [camera/lens/framing], [style/texture], [aspect/output].
+- Example prompt: A tired night-shift nurse pauses under a buzzing hospital corridor light, one hand on a paper coffee cup, medium close-up, 50mm lens, cool fluorescent practical light from overhead, natural skin texture, soft film grain, quiet dramatic realism, 16:9.
+- Troubleshooting notes: Front-load identity, simplify hands/text, use references for continuity, inspect revised prompt when available.
+- Source confidence: high
+
+## Gemini image / Nano Banana
+- Model name: Gemini image / Nano Banana
+- Modality: image generation, editing, multi-image composition
+- Best use cases: natural-language scene construction, complex edits, text rendering, reference-heavy composition
+- Weak use cases: unverified surface-specific settings, overlong instructions, conflicting references
+- Prompt structure recommendations: declarative natural language; subject, action/kinetics, environment/context, lighting/atmosphere, camera/hardware, style/constraints
+- Ideal prompt length: can accept long structured briefs per guides; still prefer concise modular structure
+- Style control behavior: strong when style is a coherent brief rather than tag soup
+- Realism behavior: strong when lighting and physical context are explicit
+- Camera/lens understanding: good in source guides; use camera/composition language normally
+- Motion understanding: n/a for stills
+- Character consistency support: reference-heavy workflows described; exact limits should be verified
+- Reference image support: source guides favor semantic positives; exact negative support varies by surface
+- Negative prompt support: aspect/settings may be prompt, UI, or API dependent; verify current surface
+- Parameter support: supported behavior varies by surface; unknown without current docs
+- Aspect ratio support: n/a
+- Duration support: unknown without current docs
+- Resolution support: seed support unknown; reference image support described but limits may change
+- Seed/reference controls: reference conflicts, over-instruction, unsupported parameter assumptions
+- Common artifacts: Create [asset type]. Subject: ... Action/context: ... Environment: ... Lighting: ... Camera/composition: ... Style/constraints: ...
+- Recommended prompt template: Create a character reference sheet for a courier in a yellow raincoat, wet black hair, tired brown eyes, compact athletic build, plain studio background, front/three-quarter/profile/full-body views, even soft light, consistent facial features, natural fabric texture.
+- Example prompt: Reduce reference count when conflicts appear; convert tag lists to prose; verify exact current limits.
+- Troubleshooting notes: medium
+- Source confidence: medium
+
+## GPT-image-2
+- Model name: GPT-image-2
+- Modality: image generation, editing
+- Best use cases: high-fidelity image craft, typography/text rendering, editing, consistency workflows
+- Weak use cases: current API/settings may differ; exact prompt controls need official verification
+- Prompt structure recommendations: clear creative brief with purpose, subject, composition, lighting, style, text/edit instructions, and constraints
+- Ideal prompt length: unknown; use concise complete briefs unless current docs indicate otherwise
+- Style control behavior: strong per source guide, especially when purpose and layout are explicit
+- Realism behavior: strong with craft details, texture, and lighting
+- Camera/lens understanding: good for image composition; exact camera/lens weighting unknown
+- Motion understanding: n/a for stills
+- Character consistency support: editing/reference workflows described; verify current docs
+- Reference image support: unknown in distilled suite; do not guess separate negative support
+- Negative prompt support: parameter surface discussed in source guide; verify official docs
+- Parameter support: unknown without current docs
+- Aspect ratio support: n/a
+- Duration support: unknown without current docs
+- Resolution support: seed/reference controls unknown unless current docs provided
+- Seed/reference controls: over-complex text layout, policy/content edge cases, inconsistency without references
+- Common artifacts: [purpose]. [subject]. Composition: ... Lighting: ... Style: ... Text if any: ... Constraints: ...
+- Recommended prompt template: Poster-style still of a small-town observatory at night, single readable title at top, clean typographic hierarchy, blue-black sky, warm window light, cinematic but realistic, no extra copy.
+- Example prompt: Simplify text layout; use edit/reference workflow for consistency; verify model parameters before export.
+- Troubleshooting notes: medium
+- Source confidence: medium
+
+## Le Chat / FLUX Ultra
+- Model name: Le Chat / FLUX Ultra
+- Modality: image generation and editing through Le Chat
+- Best use cases: natural-language image prompting, typography, product/design visuals, prompt-enhanced imagery
+- Weak use cases: direct low-level FLUX controls through Le Chat, seed/CFG/steps, guaranteed aspect ratio on every surface
+- Prompt structure recommendations: natural language; no Stable Diffusion weighting syntax or comma-tag stacks
+- Ideal prompt length: moderate natural-language brief; avoid massive overloaded prompts
+- Style control behavior: strong with coherent natural-language style requests
+- Realism behavior: strong when material, light, and composition are explicit
+- Camera/lens understanding: good for image composition/lens terms; exact weighting unknown
+- Motion understanding: n/a for stills
+- Character consistency support: upload/edit workflow; guide notes uploaded aspect ratio preservation in edits
+- Reference image support: no separate negative field in guide; describe desired positive state
+- Negative prompt support: no seed/CFG/step controls through Le Chat per guide
+- Parameter support: prompted aspect ratio may be inconsistent; upload/edit workaround noted
+- Aspect ratio support: n/a
+- Duration support: unknown or surface-dependent
+- Resolution support: no seed; references via upload/edit workflow
+- Seed/reference controls: aspect inconsistency, literal interpretation of SD syntax, policy refusals
+- Common artifacts: A [subject] in [context], [composition], [lighting], [style/material detail], [desired aspect or edit preservation].
+- Recommended prompt template: Product photograph of a matte black pocket recorder on a clean grey surface, softbox reflection along one edge, crisp readable buttons, minimal studio composition, realistic plastic and metal texture, square crop.
+- Example prompt: Use natural language; rewrite negatives as positive descriptions; use upload/edit for aspect preservation when needed.
+- Troubleshooting notes: high
+- Source confidence: high
+
+## Midjourney
+- Model name: Midjourney
+- Modality: image generation
+- Best use cases: stylized cinematic stills and concept images when user targets Midjourney
+- Weak use cases: local sources mention mainly for comparison; exact current parameters unknown
+- Prompt structure recommendations: use universal image brief, then adapt with current Midjourney docs if supplied
+- Ideal prompt length: unknown
+- Style control behavior: unknown from local guides
+- Realism behavior: unknown from local guides
+- Camera/lens understanding: unknown from local guides
+- Motion understanding: n/a
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: unknown
+- Parameter support: unknown
+- Aspect ratio support: n/a
+- Duration support: unknown
+- Resolution support: unknown
+- Seed/reference controls: unknown
+- Common artifacts: model-specific syntax mismatch if guessed
+- Recommended prompt template: Use universal brief and mark parameters unknown.
+- Example prompt: Unknown-profile export: preserve subject, light, camera, style, and aspect request in plain language.
+- Troubleshooting notes: Ask for current docs/settings or browse official/current sources before asserting flags.
+- Source confidence: low
+
+## Stable Diffusion
+- Model name: Stable Diffusion
+- Modality: image generation, editing, local workflows
+- Best use cases: parameterized local image generation and controllable pipelines
+- Weak use cases: not deeply profiled; capabilities depend on checkpoint, UI, ControlNet/IP-Adapter/etc.
+- Prompt structure recommendations: requires workflow-specific adaptation; do not use Le Chat/Grok natural-language assumptions blindly
+- Ideal prompt length: unknown
+- Style control behavior: workflow-dependent
+- Realism behavior: workflow-dependent
+- Camera/lens understanding: workflow-dependent
+- Motion understanding: n/a
+- Character consistency support: workflow-dependent
+- Reference image support: often supported in ecosystem, but exact workflow unknown here
+- Negative prompt support: workflow-dependent
+- Parameter support: workflow-dependent
+- Aspect ratio support: n/a
+- Duration support: workflow-dependent
+- Resolution support: seed support likely in many workflows but mark unknown unless target UI is known
+- Seed/reference controls: tag/prose mismatch, missing control modules, checkpoint-specific failures
+- Common artifacts: Create universal brief, then translate only after target SD workflow is known.
+- Recommended prompt template: A universal cinematic still brief with separate fields for subject, style, camera, lighting, negative risks, and references.
+- Example prompt: Ask which SD UI/model/checkpoint/control stack is used.
+- Troubleshooting notes: low
+- Source confidence: low
+
+## Ideogram
+- Model name: Ideogram
+- Modality: image generation, text/design images
+- Best use cases: text-heavy posters and design assets, based on comparison mentions
+- Weak use cases: not deeply profiled in local guides
+- Prompt structure recommendations: unknown; use universal image brief with text layout separated
+- Ideal prompt length: unknown
+- Style control behavior: unknown
+- Realism behavior: unknown
+- Camera/lens understanding: unknown
+- Motion understanding: n/a
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: unknown
+- Parameter support: unknown
+- Aspect ratio support: n/a
+- Duration support: unknown
+- Resolution support: unknown
+- Seed/reference controls: unknown
+- Common artifacts: guessing text capabilities beyond source
+- Recommended prompt template: Use universal brief and mark exact parameters unknown.
+- Example prompt: Poster concept with exact desired text separated from visual description.
+- Troubleshooting notes: Verify current docs for text, style, and aspect controls.
+- Source confidence: low
+
+## DALL-E
+- Model name: DALL-E
+- Modality: image generation
+- Best use cases: general image generation; mentioned for comparison
+- Weak use cases: not profiled in local guides
+- Prompt structure recommendations: unknown; use universal image brief
+- Ideal prompt length: unknown
+- Style control behavior: unknown
+- Realism behavior: unknown
+- Camera/lens understanding: unknown
+- Motion understanding: n/a
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: unknown
+- Parameter support: unknown
+- Aspect ratio support: n/a
+- Duration support: unknown
+- Resolution support: unknown
+- Seed/reference controls: unknown
+- Common artifacts: assuming current OpenAI image capabilities from memory
+- Recommended prompt template: Use universal prompt and route to current official docs if exact settings matter.
+- Example prompt: A concise natural-language cinematic still brief.
+- Troubleshooting notes: Verify current official documentation before model-specific claims.
+- Source confidence: low
+
+## FLUX direct
+- Model name: FLUX direct
+- Modality: image generation and editing depending implementation
+- Best use cases: photoreal/design imagery in FLUX-based systems
+- Weak use cases: direct FLUX outside Le Chat not profiled; implementation dependent
+- Prompt structure recommendations: workflow-specific; do not assume Le Chat limitations apply to all FLUX stacks
+- Ideal prompt length: unknown
+- Style control behavior: unknown
+- Realism behavior: unknown
+- Camera/lens understanding: unknown
+- Motion understanding: n/a
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: implementation dependent
+- Parameter support: implementation dependent
+- Aspect ratio support: n/a
+- Duration support: implementation dependent
+- Resolution support: unknown
+- Seed/reference controls: workflow-specific artifacts
+- Common artifacts: Use universal brief; ask for host/UI/workflow.
+- Recommended prompt template: Natural-language image brief plus optional fields separated for the target UI.
+- Example prompt: Confirm whether this is Le Chat, local FLUX, API, or another host.
+- Troubleshooting notes: low
+- Source confidence: low

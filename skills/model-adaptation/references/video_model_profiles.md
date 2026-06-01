@@ -1,0 +1,251 @@
+# Video Model Profiles
+
+## Grok Imagine / Aurora video
+- Model name: Grok Imagine / Aurora video
+- Modality: text-to-video, image-to-video, reference images, editing, extension
+- Best use cases: short cinematic clips, I2V from locked stills, fast variants, audio-aware prompts in source guides
+- Weak use cases: full scenes in one prompt, too many camera moves, long dialogue, long-form continuity without chaining
+- Prompt structure recommendations: subject doing one thing, one camera move, style, lighting, audio cue, settings separated when supported
+- Ideal prompt length: concise, front-loaded, one-shot prompts; API max length exists but prompt economy is favored
+- Style control behavior: strong with cinematic and photographic vocabulary
+- Realism behavior: stronger with physical consequences, grounded contact, texture, light behavior
+- Camera/lens understanding: strong; source guides emphasize one camera move and lens/framing terms
+- Motion understanding: good when action is simple, continuous, and consequence-based
+- Character consistency support: reference images and image-first pipeline recommended
+- Reference image support: supported in documented workflows/API per source guides
+- Negative prompt support: use positive restatement unless current API/tool exposes a separate field
+- Parameter support: duration/aspect/reference fields documented in Grok API guide; verify current API
+- Aspect ratio support: multiple aspect ratios documented
+- Duration support: 1-15s T2V in guides; edits shorter/capped in guides
+- Resolution support: resolution options documented; verify current values
+- Seed/reference controls: seed unknown; reference image controls documented
+- Common artifacts: morphing, identity drift, hands, temporal blending, lip/audio mismatch
+- Recommended prompt template: [Subject doing one action], [one camera move], [style], [lighting], [audio cue], [duration/aspect settings].
+- Example prompt: A courier in a yellow raincoat runs through a wet alley for 8 seconds, low side tracking shot, cold neon reflections, rain splashing from each step, tense thriller realism. Audio: rain, breath, footsteps. Stable face and unchanged coat.
+- Troubleshooting notes: Split complex scenes, use references for identity, keep one camera movement, shorten dialogue.
+- Source confidence: high
+
+## Gemini Veo 3.1
+- Model name: Gemini Veo 3.1
+- Modality: text-to-video, image-to-video, reference ingredients, scene extension, audio
+- Best use cases: cinematic clips with audio, reference-based video, first/last-frame style workflows, extension chains
+- Weak use cases: long dialogue, many negative constraints, too many camera instructions
+- Prompt structure recommendations: five/six-part cinematic formula: subject, action, context, style, camera, audio/constraints
+- Ideal prompt length: medium concise prompt; enough detail for subject/action/camera/audio without overload
+- Style control behavior: strong with genre and cinematic vocabulary per guide
+- Realism behavior: strong with lighting, texture, and film stock cues
+- Camera/lens understanding: good; place one camera instruction early
+- Motion understanding: good with clear action and extension workflows
+- Character consistency support: references/ingredients and extension support in source guide
+- Reference image support: source guide states up to 4 reference ingredients; verify current docs
+- Negative prompt support: concise constraints supported; guide recommends limiting negatives
+- Parameter support: duration/reference/audio/settings depend on current surface
+- Aspect ratio support: supported; exact options need verification
+- Duration support: 4/6/8s clips in guide, extendable
+- Resolution support: 4K upscale mentioned in guide; verify availability
+- Seed/reference controls: seed unknown; reference ingredients supported per guide
+- Common artifacts: ignored camera moves, lip sync issues, unwanted music, prompt collapse from over-constraint
+- Recommended prompt template: [Subject] [action] in [context], [style], [camera], [lighting], [audio], [top constraints].
+- Example prompt: A woman in a yellow raincoat holds a steaming cup at a rainy cafe window, slow dolly-in, warm interior practicals against blue rain outside, natural lip movement as she whispers "not yet," soft cafe ambience and rain, no extra music.
+- Troubleshooting notes: Use one camera instruction, shorten dialogue, cap constraints, use references for identity.
+- Source confidence: medium
+
+## Gemini Omni video
+- Model name: Gemini Omni video
+- Modality: video generation, audio-aware prompting, conversational editing per source guide
+- Best use cases: cinematic prompt-to-video, audio-aware scenes, iterative conversational edits, reference-driven prompting
+- Weak use cases: undocumented capabilities and surface-specific settings
+- Prompt structure recommendations: official-style elements plus cinematic vocabulary: subject, context, action, style, camera, audio
+- Ideal prompt length: unknown exact limit; use concise complete prompt
+- Style control behavior: strong per guide but verify surface
+- Realism behavior: strong with physical/cinematic detail
+- Camera/lens understanding: good per guide
+- Motion understanding: good when action is specific
+- Character consistency support: reference-driven workflows described
+- Reference image support: source guide describes reference syntax/workflows; verify current docs
+- Negative prompt support: source guide states support; use sparingly and verify surface
+- Parameter support: parameter table in guide; verify current docs
+- Aspect ratio support: documented in guide; verify current options
+- Duration support: guide-dependent; verify current docs
+- Resolution support: guide-dependent; verify current docs
+- Seed/reference controls: seed/reference controls guide-dependent
+- Common artifacts: anatomy errors, physics violations, identity drift, audio-video desync, prompt collapse
+- Recommended prompt template: [Subject], [action], [setting], [camera/lens], [lighting/color], [audio], [constraints/settings].
+- Example prompt: A locked-off medium shot of an old radio on a kitchen table as the dial turns by itself, tungsten practical light, dusty air, subtle room tone and faint static, slow dread, no visible hands.
+- Troubleshooting notes: Mark undocumented features unknown; use conversational edits only for localized changes.
+- Source confidence: medium
+
+## Kling AI
+- Model name: Kling AI
+- Modality: T2V, I2V, Elements/multi-reference, motion brush, camera controls, start/end frames, extend, lip sync, video-to-video on some surfaces
+- Best use cases: controlled short video, keyframe interpolation, multi-reference continuity, product/commercial shots
+- Weak use cases: complex close-up hand interaction, exact text/logos, unsupported native audio on older tiers, overloaded multi-shot prompts
+- Prompt structure recommendations: hybrid prompt: subject, action, camera, lighting/style, negative prompt where supported
+- Ideal prompt length: tier/model dependent; concise shot prompts favored
+- Style control behavior: strong with clear style/camera/lens instructions
+- Realism behavior: good with lighting/texture and negative artifact control
+- Camera/lens understanding: strong, with some preset camera controls by tier
+- Motion understanding: good for simple direct motion; complex choreography risky
+- Character consistency support: Elements/multi-reference workflows support continuity
+- Reference image support: Elements/multi-reference and I2V supported in guides
+- Negative prompt support: negative prompts supported in many guide workflows
+- Parameter support: tier-specific controls; verify current model/tier
+- Aspect ratio support: tier-specific; guide includes aspect options
+- Duration support: tier-specific clip lengths; verify current model/tier
+- Resolution support: tier-specific quality/resolution
+- Seed/reference controls: seed unknown; reference/Elements controls documented
+- Common artifacts: identity drift, hand errors, background morphing, camera preset mismatch, audio limitations
+- Recommended prompt template: T2V: [subject/action]. Camera: [move]. Lighting/style: [look]. Negative prompt: [top artifacts].
+- Example prompt: A red ceramic mug slides across a wet cafe table as a hand stops it, macro static shot, warm window light, realistic water streaks. Negative: extra fingers, changing mug color, background morphing, blur.
+- Troubleshooting notes: Check tier/features, use negative prompt for top artifacts, reframe risky hands wider.
+- Source confidence: high
+
+## Seedance 2.0
+- Model name: Seedance 2.0
+- Modality: text-to-video, image-to-video, image/video/audio reference inputs in quad-modal workflow per guides
+- Best use cases: asset-role prompting, shot-by-shot cinematic clips, audio/reference-driven scenes
+- Weak use cases: too many shots for duration, unassigned references, mirrors/reflections, content/IP-sensitive prompts
+- Prompt structure recommendations: format line, asset legend, shot blocks, audio layers, logic rules, constraints
+- Ideal prompt length: shot-count and prompt length must respect 4-15s duration; concise shot blocks
+- Style control behavior: strong when style anchor is singular and assets have jobs
+- Realism behavior: good with physical logic rules and texture cues
+- Camera/lens understanding: good with explicit framing/lens/movement per shot
+- Motion understanding: good when each shot has one motion verb
+- Character consistency support: strong through assigned reference assets
+- Reference image support: guides cite up to 9 images, 3 videos, 3 audio files; verify current platform
+- Negative prompt support: constraints/stability boilerplate in prompt; exact negative field unknown
+- Parameter support: platform-specific; verify current surface
+- Aspect ratio support: input/setting-dependent; crop references to target aspect per guide
+- Duration support: 4-15s in guides
+- Resolution support: unknown/current platform dependent
+- Seed/reference controls: seed unknown; reference tags/roles central
+- Common artifacts: subject stops, identity drift, mirror/reflection breaks, filter rejection, overloaded dialogue
+- Recommended prompt template: FORMAT: [duration]s / [shot count] SHOTS / [concept]; ASSETS: @image_1 role; SHOT blocks; AUDIO; LOGIC.
+- Example prompt: FORMAT: 8s / 2 SHOTS / courier reaches red door. ASSETS: @image_1 locks courier wardrobe. SHOT 1: courier runs through rain, low side tracking. SHOT 2: he stops at red door, hand hits metal. Audio: rain, breath, hand slap. Logic: same courier and coat throughout.
+- Troubleshooting notes: Assign every asset a job, count actions and words, avoid mirrors, simplify shot math.
+- Source confidence: high
+
+## Runway
+- Model name: Runway
+- Modality: video generation/editing
+- Best use cases: not deeply profiled; use when user targets Runway and supplies docs/settings
+- Weak use cases: unknown local capability surface
+- Prompt structure recommendations: universal video brief; model-specific syntax unknown
+- Ideal prompt length: unknown
+- Style control behavior: unknown
+- Realism behavior: unknown
+- Camera/lens understanding: unknown
+- Motion understanding: unknown
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: unknown
+- Parameter support: unknown
+- Aspect ratio support: unknown
+- Duration support: unknown
+- Resolution support: unknown
+- Seed/reference controls: unknown
+- Common artifacts: unsupported assumptions, motion overload
+- Recommended prompt template: Universal video brief with subject/action/camera/light/audio/constraints separated.
+- Example prompt: 8s thriller shot brief with one action and one camera movement.
+- Troubleshooting notes: Verify current Runway docs before exact settings.
+- Source confidence: low
+
+## Pika
+- Model name: Pika
+- Modality: video generation
+- Best use cases: not deeply profiled; use conservative video briefs
+- Weak use cases: unknown
+- Prompt structure recommendations: universal video brief
+- Ideal prompt length: unknown
+- Style control behavior: unknown
+- Realism behavior: unknown
+- Camera/lens understanding: unknown
+- Motion understanding: unknown
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: unknown
+- Parameter support: unknown
+- Aspect ratio support: unknown
+- Duration support: unknown
+- Resolution support: unknown
+- Seed/reference controls: unknown
+- Common artifacts: unsupported assumptions
+- Recommended prompt template: Universal brief only.
+- Example prompt: One-shot video description with model fields marked unknown.
+- Troubleshooting notes: Verify current Pika docs.
+- Source confidence: low
+
+## Luma
+- Model name: Luma
+- Modality: video generation
+- Best use cases: not deeply profiled; use conservative video briefs
+- Weak use cases: unknown
+- Prompt structure recommendations: universal video brief
+- Ideal prompt length: unknown
+- Style control behavior: unknown
+- Realism behavior: unknown
+- Camera/lens understanding: unknown
+- Motion understanding: unknown
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: unknown
+- Parameter support: unknown
+- Aspect ratio support: unknown
+- Duration support: unknown
+- Resolution support: unknown
+- Seed/reference controls: unknown
+- Common artifacts: unsupported assumptions
+- Recommended prompt template: Universal brief only.
+- Example prompt: One-shot video description with model fields marked unknown.
+- Troubleshooting notes: Verify current Luma docs.
+- Source confidence: low
+
+## Sora
+- Model name: Sora
+- Modality: video generation
+- Best use cases: cinematic video target mentioned in sources/user request
+- Weak use cases: not profiled deeply in local guides
+- Prompt structure recommendations: universal cinematic video brief until current docs are provided
+- Ideal prompt length: unknown
+- Style control behavior: unknown
+- Realism behavior: unknown
+- Camera/lens understanding: unknown
+- Motion understanding: unknown
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: unknown
+- Parameter support: unknown
+- Aspect ratio support: unknown
+- Duration support: unknown
+- Resolution support: unknown
+- Seed/reference controls: unknown
+- Common artifacts: unsupported assumptions
+- Recommended prompt template: Universal video brief plus unknown log.
+- Example prompt: A concise scene prompt with one action, camera, light, and continuity anchors.
+- Troubleshooting notes: Verify current official docs before exact controls.
+- Source confidence: low
+
+## Hailuo
+- Model name: Hailuo
+- Modality: video generation
+- Best use cases: activation placeholder from user request
+- Weak use cases: no local guide evidence
+- Prompt structure recommendations: universal cinematic video brief until current docs are provided
+- Ideal prompt length: unknown
+- Style control behavior: unknown
+- Realism behavior: unknown
+- Camera/lens understanding: unknown
+- Motion understanding: unknown
+- Character consistency support: unknown
+- Reference image support: unknown
+- Negative prompt support: unknown
+- Parameter support: unknown
+- Aspect ratio support: unknown
+- Duration support: unknown
+- Resolution support: unknown
+- Seed/reference controls: unknown
+- Common artifacts: unsupported assumptions
+- Recommended prompt template: Universal video brief plus unknown log.
+- Example prompt: A concise one-shot video prompt with unknown settings.
+- Troubleshooting notes: Ask for docs or verify current specs.
+- Source confidence: unknown
