@@ -6,8 +6,8 @@
 CHANGELOG.md
 LICENSE
 MANIFEST.md
+RESEARCH_PROVENANCE.md
 README.md
-SOURCE_MAP.md
 skills/
 skills/character-location-prop-bible/
 skills/character-location-prop-bible/SKILL.md
@@ -95,7 +95,7 @@ skills/model-adaptation/templates/universal_prompt_brief.md
 skills/model-adaptation/tests/
 skills/model-adaptation/tests/model_routing_tests.md
 skills/model-adaptation/tests/prompt_translation_tests.md
-skills/model-adaptation/tests/source_map_completeness_tests.md
+skills/model-adaptation/tests/research_provenance_tests.md
 skills/model-adaptation/tests/unknown_capability_tests.md
 skills/prompt-iteration-and-diagnostics/
 skills/prompt-iteration-and-diagnostics/SKILL.md
@@ -349,7 +349,7 @@ skills/style-cinematography-director/tests/style_translation_tests.md
 - `skills/cinematic-video-prompting/tests/video_prompt_completeness_tests.md`
 - `skills/model-adaptation/tests/model_routing_tests.md`
 - `skills/model-adaptation/tests/prompt_translation_tests.md`
-- `skills/model-adaptation/tests/source_map_completeness_tests.md`
+- `skills/model-adaptation/tests/research_provenance_tests.md`
 - `skills/model-adaptation/tests/unknown_capability_tests.md`
 - `skills/prompt-iteration-and-diagnostics/tests/prompt_quality_checklist_tests.md`
 - `skills/screenplay-and-scene-writing/tests/screenplay_scene_tests.md`

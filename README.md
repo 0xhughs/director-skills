@@ -63,7 +63,7 @@ One prompt format does not work everywhere. The suite treats model adaptation as
 ```text
 director-skills/
   README.md
-  SOURCE_MAP.md
+  RESEARCH_PROVENANCE.md
   CHANGELOG.md
   MANIFEST.md
   skills/
@@ -169,7 +169,7 @@ The suite was distilled from local research guides covering:
 - continuity management
 - AI storytelling workflows
 
-See [SOURCE_MAP.md](SOURCE_MAP.md) for source influence, cautions, exclusions, and known gaps.
+See [RESEARCH_PROVENANCE.md](RESEARCH_PROVENANCE.md) for public-safe research provenance, cautions, exclusions, and maintenance notes.
 
 ## Safety And IP Hygiene
 
@@ -193,7 +193,7 @@ MIT. Use it, adapt it, remix it, and ship with it. See [LICENSE](LICENSE).
 When adding new guides:
 
 1. Read for repeatable workflows, not just facts.
-2. Update [SOURCE_MAP.md](SOURCE_MAP.md).
+2. Update [RESEARCH_PROVENANCE.md](RESEARCH_PROVENANCE.md) if the research scope changes.
 3. Add or revise references, templates, examples, and tests.
 4. If model behavior changes, update `skills/model-adaptation/references/`.
 5. Mark confidence and unknowns explicitly.

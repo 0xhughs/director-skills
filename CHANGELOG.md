@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.1.1 - ai-storyteller integration
+## 0.1.1 - Story-writing integration
 
-- Reviewed and integrated 7 additional `ai-storyteller` files covering AI-assisted short-story writing, Fountain screenplay drafting, golden-image production, audio/post workflows, release QC, rights/provenance cautions, and reusable story prompts.
+- Integrated additional private story-writing research notes covering AI-assisted short-story writing, Fountain screenplay drafting, golden-image production, audio/post workflows, release QC, rights/provenance cautions, and reusable story prompts.
 - Added short-story workflow references and templates to `short-film-development`.
 - Added Fountain workflow support to `screenplay-and-scene-writing`.
 - Added golden-image production guidance to `character-location-prop-bible`.
