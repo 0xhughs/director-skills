@@ -12,6 +12,14 @@ It is built for agents that can read local skill folders: ChatGPT, Claude, Gemin
 
 ## Quick Install
 
+Master skill mode:
+
+```bash
+git clone https://github.com/0xhughs/director-skills.git ~/.codex/skills/director-skills
+```
+
+Modular native mode:
+
 ```bash
 git clone https://github.com/0xhughs/director-skills.git
 cp -R director-skills/skills/* ~/.codex/skills/
@@ -32,6 +40,23 @@ It helps an assistant:
 - Diagnose failed generations and run disciplined iteration loops.
 
 The north star: **do not write one giant prompt. Build a production pipeline.**
+
+## One Skill Or Many?
+
+Both.
+
+`director-skills` now supports a hybrid layout:
+
+- `SKILL.md` at the repository root is the **master conductor**. Use it when an assistant or chat app wants to import one skill, one ZIP, or one knowledge bundle.
+- `skills/*/SKILL.md` files are the **specialized departments**. Use them when an agent environment supports native multi-skill registration.
+
+The master skill does not replace the modules. It routes into them.
+
+When uploading the ZIP to Claude, Grok, Gemini Spark, ChatGPT Projects, or another chat-based agent, say:
+
+```text
+This is a multi-skill suite. First read the root SKILL.md as the master router. Then treat every folder under skills/ as a specialized sub-skill. For each task, choose the relevant sub-skill, read its SKILL.md, and load only the supporting references, templates, checklists, examples, or tests needed for that task.
+```
 
 ## The Three-Layer Method
 
@@ -69,6 +94,7 @@ One prompt format does not work everywhere. The suite treats model adaptation as
 
 ```text
 director-skills/
+  SKILL.md
   README.md
   RESEARCH_PROVENANCE.md
   CHANGELOG.md
@@ -148,15 +174,21 @@ If a capability is not clearly supported by the reviewed source material, the su
 
 ## Install Or Use
 
-For an agent-skills-compatible environment, copy or reference the skill folders under `skills/`.
+For an agent-skills-compatible environment, use one of two modes.
 
-Example local install:
+Master skill mode installs the whole suite behind one router:
+
+```bash
+git clone https://github.com/0xhughs/director-skills.git ~/.codex/skills/director-skills
+```
+
+Modular native mode installs each sub-skill separately:
 
 ```bash
 cp -R skills/* ~/.codex/skills/
 ```
 
-You can also keep this repository as a reference library and point your agent at the specific skill folder needed for the task.
+You can also keep this repository as a reference library and point your agent at the root `SKILL.md` or the specific skill folder needed for the task.
 
 ## Source Grounding
 

@@ -8,6 +8,7 @@ LICENSE
 MANIFEST.md
 RESEARCH_PROVENANCE.md
 README.md
+SKILL.md
 skills/
 skills/character-location-prop-bible/
 skills/character-location-prop-bible/SKILL.md
@@ -189,10 +190,13 @@ skills/style-cinematography-director/templates/
 skills/style-cinematography-director/templates/visual_style_bible.md
 skills/style-cinematography-director/tests/
 skills/style-cinematography-director/tests/style_translation_tests.md
+tests/
+tests/master_router_tests.md
 ```
 
 ## Skill list
 
+- `director-skills` master router
 - `character-location-prop-bible`
 - `cinematic-image-prompting`
 - `cinematic-video-prompting`
@@ -205,6 +209,8 @@ skills/style-cinematography-director/tests/style_translation_tests.md
 
 ## Capabilities
 
+- Hybrid usage: one master skill for ZIP/chat uploads, or nine modular native skills for agent environments with skill routing.
+- Master routing from user intent into the correct story, screenplay, visual, prompt, continuity, diagnostic, or model-adaptation workflow.
 - Short-story planning, AI-assisted prose development, revision audits, and voice QC.
 - Story ideation, loglines, treatments, scene lists, and revision plans.
 - Screenplay scene writing, Fountain output, dialogue passes, beats, and visual action rewriting.
@@ -344,6 +350,7 @@ skills/style-cinematography-director/tests/style_translation_tests.md
 
 ## Tests created
 
+- `tests/master_router_tests.md`
 - `skills/character-location-prop-bible/tests/continuity_tests.md`
 - `skills/cinematic-image-prompting/tests/image_prompt_completeness_tests.md`
 - `skills/cinematic-video-prompting/tests/video_prompt_completeness_tests.md`

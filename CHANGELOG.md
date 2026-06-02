@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 - Master skill router
+
+- Added a root `SKILL.md` so `director-skills` can be imported as one master skill in chat-based or ZIP-based agent environments.
+- Preserved all nine existing modular sub-skills under `skills/` for native multi-skill agent environments.
+- Added root router tests covering story routing, Kling/video routing, failure diagnostics, ZIP upload behavior, and multi-stage handoffs.
+- Updated README install guidance to explain master skill mode and modular native mode.
+- Updated the manifest to include the master router and root tests.
+
 ## 0.1.1 - Story-writing integration
 
 - Integrated additional private story-writing research notes covering AI-assisted short-story writing, Fountain screenplay drafting, golden-image production, audio/post workflows, release QC, rights/provenance cautions, and reusable story prompts.
